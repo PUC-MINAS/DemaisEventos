@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin', 'AdminController@index')->name('admin');
+
+Route::get('/admin/eventos', 'EventoController@index');
+Route::get('/admin/eventos/create','EventoController@create')->name('eventos/create');
+Route::post('/admin/eventos/', 'EventoController@store');
+Route::get('/admin/eventos/{id}', 'EventoController@show');
+Route::put('/admin/eventos/{id}', 'EventoController@update');
