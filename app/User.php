@@ -36,4 +36,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    function presenca($id_evento){
+        return $this->hasMany('App\Presenca')->where('evento_id', $id_evento)->first();
+    }
+
+    function confirmouPresenca($id_evento){
+        return !!$this->presenca($id_evento);
+    }
+
+    
 }

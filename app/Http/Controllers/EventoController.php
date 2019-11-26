@@ -74,7 +74,7 @@ class EventoController extends Controller
                             ->withInput();
 
             $evento->save();
-            return redirect('admin/');
+            return redirect('admin/eventos');
         }
 
         return redirect()
@@ -170,8 +170,13 @@ class EventoController extends Controller
      * @param  \App\Evento  $evento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Evento $evento)
+    public function destroy($id)
     {
-              
+        $evento = Evento::find($id);
+        if(!$evento){
+            abort(404);
+        }
+        $evento->delete();
+        return redirect('admin/eventos');
     }
 }

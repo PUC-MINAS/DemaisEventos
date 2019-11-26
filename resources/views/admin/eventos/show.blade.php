@@ -92,9 +92,33 @@
             </section>
         </div>
         <div class="card-footer">
-            <button type="submit" class="btn btn-success">Salvar Alterações</button>
             <a href="{{url('admin/eventos')}}" class="btn btn-info">Voltar</a>
+            <button type="submit" class="btn btn-success">Salvar Alterações</button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletarModal">Deletar</button>
         </div>
     </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deletarModal" tabindex="-1" role="dialog" aria-labelledby="deletarModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Deletar Evento {{$evento->nome}}</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        Deseja deletar esse evento?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <form action="{{url('admin/eventos/'.$evento->id)}}" method="post">
+            @csrf
+            @method('delete')
+            <button type="submit" class="btn btn-danger">Deletar</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 @endsection

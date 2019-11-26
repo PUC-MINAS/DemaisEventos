@@ -52,7 +52,6 @@
                     <div class="col-sm-2">
                         <div class="btn-group">
                             <a href="{{url('admin/eventos/'.$evento->id)}}" class="btn btn-info btn-xs">Detalhes</a>
-                            <a href="" class="btn btn-danger btn-xs">Deletar</a>
                         </div>                        
                     </div>
                 </div>

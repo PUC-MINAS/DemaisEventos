@@ -117,6 +117,14 @@
                             </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{url('admin/presencas')}}" class="nav-link">
+                            <i class="nav-icon far fa-calendar"></i>
+                            <p>
+                                Presenças
+                            </p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

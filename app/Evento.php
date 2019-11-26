@@ -23,4 +23,12 @@ class Evento extends Model
     function horaFim(){
         return explode(" ", $this->fim)[1];
     }
+
+    function user(){
+       return $this->belongsTo('App\User')->first();
+    }
+
+    function presencas(){
+        return $this->hasMany('App\Presenca')->get();
+    }
 }
